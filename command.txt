@@ -1,0 +1,9 @@
+docker build -t python-ml-tkinter .
+# Pour une session interactive
+docker run -it --rm -v $(pwd):/app python-ml-tkinter
+
+# Pour exécuter un script spécifique
+docker run --rm -v $(pwd):/app python-ml-tkinter python votre_script.py
+
+# Pour Jupyter Notebook
+docker run -it --rm -p 8888:8888 -v $(pwd):/app python-ml-tkinter jupyter notebook --ip=0.0.0.0 --allow-root
